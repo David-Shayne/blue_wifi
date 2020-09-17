@@ -28,7 +28,10 @@ import {
     ListGroup,
     Container,
     Row,
-    Col
+    Col,
+    Modal,
+    ModalBody,
+    ModalHeader
 } from 'reactstrap';
 
 // core components
@@ -36,6 +39,9 @@ import PagesNavbar from 'components/Navbars/PagesNavbar.js';
 import Footer from 'components/Footer/Footer.js';
 
 class LandingPage extends React.Component {
+    state = {
+        comingSoonModalIsOpen: true
+    };
     componentDidMount() {
         document.body.classList.toggle('landing-page');
     }
@@ -79,6 +85,48 @@ class LandingPage extends React.Component {
                             src={require('assets/img/cercuri.png')}
                         />
                         <div className="content-center">
+                            <Modal
+                                isOpen={this.state.comingSoonModalIsOpen}
+                                toggle={() =>
+                                    this.setState({
+                                        comingSoonModalIsOpen: false
+                                    })
+                                }
+                                size="lg"
+                                style={{
+                                    textAlign: 'center',
+                                    transform: 'translate(0,30vh)'
+                                }}
+                            >
+                                <ModalHeader
+                                    style={{
+                                        justifyContent: 'center',
+                                        paddingTop: '4vh',
+                                        background: '#0481C6'
+                                    }}
+                                >
+                                    <div
+                                        className="h1"
+                                        style={{
+                                            textAlign: 'center',
+                                            color: 'white'
+                                        }}
+                                    >
+                                        We are coming soon!
+                                    </div>
+                                </ModalHeader>
+                                <ModalBody
+                                    className="h4"
+                                    style={{
+                                        justifyContent: 'center',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center'
+                                    }}
+                                >
+                                    We are currently still in development...
+                                </ModalBody>
+                            </Modal>
                             <Row className="row-grid justify-content-between align-items-center text-left">
                                 <Col lg="6" md="6">
                                     <h1 className="text-white title">

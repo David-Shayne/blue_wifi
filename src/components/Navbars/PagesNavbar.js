@@ -178,11 +178,16 @@ class PagesNavbar extends React.Component {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
+                                <NavLink tag={Link} to="/pricing">
+                                    Pricing List
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
                                 <NavLink href="/issue">Have an issue?</NavLink>
                             </NavItem>
                             <NavItem>
                                 <Button
-                                    className="nav-link d-none d-lg-block"
+                                    className="nav-link  d-lg-block"
                                     color="primary"
                                     href="/pricing"
                                 >

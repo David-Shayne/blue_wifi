@@ -57,7 +57,8 @@ class IssuePage extends React.Component {
             code: '',
             email: '',
             visible: false,
-            recaptchaCompleted: false
+            recaptchaCompleted: false,
+            captchaAlertIsOpen: false
         };
 
         this.dismissAlert = this.dismissAlert.bind(this);
@@ -121,8 +122,14 @@ class IssuePage extends React.Component {
                 );
 
             this.setState({ active: true });
+            this.setState({
+                name: '',
+                code: '',
+                email: '',
+                problemText: ''
+            });
         } else {
-            alert('please redo ReCAPTCHA');
+            this.setState({ captchaAlertIsOpen: true });
         }
     }
 
@@ -341,7 +348,7 @@ class IssuePage extends React.Component {
                                                         />
                                                     </FormGroup>
                                                     <ReCAPTCHA
-                                                        sitekey="6Lf5V80ZAAAAAAJ-gdvAJ_bcu2Fj3EgYuldlnqNd"
+                                                        sitekey="6LcPZM0ZAAAAACWzp08F9I39BnQ5Fq5ZuchIlSVV"
                                                         theme="dark"
                                                         onChange={() =>
                                                             this.setState({
@@ -349,6 +356,24 @@ class IssuePage extends React.Component {
                                                             })
                                                         }
                                                     />
+                                                    <Alert
+                                                        style={{
+                                                            marginTop: '1rem'
+                                                        }}
+                                                        color="danger"
+                                                        isOpen={
+                                                            this.state
+                                                                .captchaAlertIsOpen
+                                                        }
+                                                        toggle={() =>
+                                                            this.setState({
+                                                                captchaAlertIsOpen: false
+                                                            })
+                                                        }
+                                                    >
+                                                        Please redo Captcha and
+                                                        try again
+                                                    </Alert>
                                                     <Button
                                                         className="btn-round"
                                                         type="submit"
@@ -360,24 +385,30 @@ class IssuePage extends React.Component {
                                                     >
                                                         Send
                                                     </Button>
+                                                    <Alert
+                                                        color="info"
+                                                        isOpen={
+                                                            this.state.visible
+                                                        }
+                                                        toggle={this.onDismiss}
+                                                        style={{
+                                                            position:
+                                                                'relative',
+                                                            zIndex: '10000'
+                                                        }}
+                                                    >
+                                                        <strong>
+                                                            Ticket Sent!
+                                                        </strong>{' '}
+                                                        You should recieve help
+                                                        shortly via email.
+                                                    </Alert>
                                                 </Form>
                                             </CardBody>
-                                            <CardFooter></CardFooter>
                                         </Card>
                                     </Col>
                                 </Row>
-                                <Alert
-                                    color="info"
-                                    isOpen={this.state.visible}
-                                    toggle={this.onDismiss}
-                                    style={{
-                                        position: 'relative',
-                                        zIndex: '10000'
-                                    }}
-                                >
-                                    <strong>Ticket Sent!</strong> You should
-                                    recieve help shortly via email.
-                                </Alert>
+
                                 <div className="register-bg" />
                                 <div
                                     className="square square-1"

@@ -18,6 +18,7 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import classnames from 'classnames';
+import ReCAPTCHA from 'react-google-recaptcha';
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from 'perfect-scrollbar';
 // reactstrap components
@@ -26,11 +27,9 @@ import {
     Card,
     CardHeader,
     CardBody,
-    Label,
     FormGroup,
     Form,
     Input,
-    FormText,
     NavItem,
     NavLink,
     Nav,
@@ -69,7 +68,9 @@ class AboutPage extends React.Component {
             phone: '',
             email: '',
             message: '',
-            visible: false
+            visible: false,
+            recaptchaIsCompleted: false,
+            formAlertIsOpen: false
         };
 
         this.onChange = this.onChange.bind(this);
@@ -108,24 +109,26 @@ class AboutPage extends React.Component {
 
     sendEmail(e) {
         e.preventDefault();
-
-        emailjs
-            .sendForm(
-                'gmail',
-                'business',
-                document.querySelector('#contact_form'),
-                'user_wu0cjpDk07ph5E7v7cXjJ'
-            )
-            .then(
-                result => {
-                    console.log(result);
-                },
-                error => {
-                    console.log(error.text);
-                }
-            );
-
-        this.setState({ visible: true });
+        if (this.state.recaptchaIsCompleted) {
+            emailjs
+                .sendForm(
+                    'gmail',
+                    'business',
+                    document.querySelector('#contact_form'),
+                    'user_wu0cjpDk07ph5E7v7cXjJ'
+                )
+                .then(
+                    result => {
+                        console.log(result);
+                    },
+                    error => {
+                        console.log(error.text);
+                    }
+                );
+            this.setState({ visible: true });
+        } else {
+            this.setState({ formAlertIsOpen: true });
+        }
     }
 
     render() {
@@ -465,6 +468,15 @@ class AboutPage extends React.Component {
                                                                 }
                                                             />
                                                         </FormGroup>
+                                                        <ReCAPTCHA
+                                                            sitekey="6LcPZM0ZAAAAACWzp08F9I39BnQ5Fq5ZuchIlSVV"
+                                                            theme="dark"
+                                                            onChange={() =>
+                                                                this.setState({
+                                                                    recaptchaIsCompleted: true
+                                                                })
+                                                            }
+                                                        />
                                                         <Button
                                                             className="btn-round float-right"
                                                             color="primary"
@@ -485,6 +497,21 @@ class AboutPage extends React.Component {
                                                     We'll respond shortly
                                                 </UncontrolledTooltip>
                                             </Form>
+                                            <Alert
+                                                style={{ marginTop: '1rem' }}
+                                                color="danger"
+                                                isOpen={
+                                                    this.state.formAlertIsOpen
+                                                }
+                                                toggle={() =>
+                                                    this.setState({
+                                                        formAlertIsOpen: false
+                                                    })
+                                                }
+                                            >
+                                                Please redo Captcha and try
+                                                again
+                                            </Alert>
                                             <Alert
                                                 style={{ marginTop: '1rem' }}
                                                 color="info"

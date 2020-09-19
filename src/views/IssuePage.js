@@ -15,11 +15,11 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
-import classnames from 'classnames';
+import React from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import classnames from "classnames";
 // reactstrap components
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 import {
     Alert,
     Button,
@@ -38,66 +38,62 @@ import {
     InputGroup,
     Container,
     Row,
-    Col
-} from 'reactstrap';
+    Col,
+} from "reactstrap";
 
 // core components
-import PagesNavbar from 'components/Navbars/PagesNavbar.js';
-import Footer from 'components/Footer/Footer.js';
+import PagesNavbar from "components/Navbars/PagesNavbar.js";
+import Footer from "components/Footer/Footer.js";
 
 class IssuePage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            squares1to6: '',
-            squares7and8: '',
-            problemText: '',
-            name: '',
-            code: '',
-            email: '',
-            visible: false,
+            squares1to6: "",
+            squares7and8: "",
+            problemText: "",
+            name: "",
+            code: "",
+            email: "",
+            successAlertIsOpen: false,
             recaptchaCompleted: false,
-            captchaAlertIsOpen: false
+            captchaAlertIsOpen: false,
         };
 
-        this.dismissAlert = this.dismissAlert.bind(this);
         this.sendEmail = this.sendEmail.bind(this);
     }
 
     componentDidMount() {
-        document.body.classList.toggle('register-page');
+        document.body.classList.toggle("register-page");
         document.documentElement.addEventListener(
-            'mousemove',
+            "mousemove",
             this.followCursor
         );
-    }
-    dismissAlert(element) {
-        this.setState({ element: false });
     }
     componentWillUnmount() {
-        document.body.classList.toggle('register-page');
+        document.body.classList.toggle("register-page");
         document.documentElement.removeEventListener(
-            'mousemove',
+            "mousemove",
             this.followCursor
         );
     }
-    followCursor = event => {
+    followCursor = (event) => {
         let posX = event.clientX - window.innerWidth / 2;
         let posY = event.clientY - window.innerWidth / 6;
         this.setState({
             squares1to6:
-                'perspective(500px) rotateY(' +
+                "perspective(500px) rotateY(" +
                 posX * 0.05 +
-                'deg) rotateX(' +
+                "deg) rotateX(" +
                 posY * -0.05 +
-                'deg)',
+                "deg)",
             squares7and8:
-                'perspective(500px) rotateY(' +
+                "perspective(500px) rotateY(" +
                 posX * 0.02 +
-                'deg) rotateX(' +
+                "deg) rotateX(" +
                 posY * -0.02 +
-                'deg)'
+                "deg)",
         });
     };
 
@@ -107,27 +103,27 @@ class IssuePage extends React.Component {
         if (this.state.recaptchaCompleted) {
             emailjs
                 .sendForm(
-                    'gmail',
-                    'ticket',
-                    document.querySelector('#issue_form'),
-                    'user_wu0cjpDk07ph5E7v7cXjJ'
+                    "gmail",
+                    "ticket",
+                    document.querySelector("#issue_form"),
+                    "user_RfMWYQ64opzY6fWBL7yZe"
                 )
                 .then(
-                    result => {
+                    (result) => {
                         console.log(result);
+                        this.setState({
+                            successAlertIsOpen: true,
+                            name: "",
+                            code: "",
+                            email: "",
+                            problemText: "",
+                        });
                     },
-                    error => {
+                    (error) => {
                         console.log(error.text);
+                        alert("there was an error");
                     }
                 );
-
-            this.setState({ active: true });
-            this.setState({
-                name: '',
-                code: '',
-                email: '',
-                problemText: ''
-            });
         } else {
             this.setState({ captchaAlertIsOpen: true });
         }
@@ -147,14 +143,14 @@ class IssuePage extends React.Component {
                                     <Col
                                         lg="5"
                                         md="6"
-                                        style={{ margin: '0 auto' }}
+                                        style={{ margin: "0 auto" }}
                                     >
                                         <div
                                             className="square square-7"
                                             id="square7"
                                             style={{
                                                 transform: this.state
-                                                    .squares7and8
+                                                    .squares7and8,
                                             }}
                                         />
                                         <div
@@ -162,24 +158,25 @@ class IssuePage extends React.Component {
                                             id="square8"
                                             style={{
                                                 transform: this.state
-                                                    .squares7and8
+                                                    .squares7and8,
                                             }}
                                         />
                                         <Card className="card-register">
-                                            <CardHeader>
-                                                <CardImg
-                                                    alt="..."
-                                                    src={require('assets/img/square-purple-1.png')}
-                                                    style={{
-                                                        width: '100%',
-                                                        height: '60%'
-                                                    }}
-                                                />
+                                            <CardHeader
+                                                style={{
+                                                    paddingBottom: "1rem",
+                                                }}
+                                            >
                                                 <CardTitle
                                                     tag="h4"
                                                     style={{
-                                                        marginLeft: '1rem',
-                                                        marginTop: '1rem'
+                                                        padding: "1rem 0",
+                                                        margin: "0 auto",
+                                                        color: "white",
+                                                        width: "100%",
+                                                        textAlign: "center",
+                                                        background:
+                                                            "linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca)",
                                                     }}
                                                 >
                                                     Problem?
@@ -190,8 +187,8 @@ class IssuePage extends React.Component {
                                                     className="h2"
                                                     style={{
                                                         color:
-                                                            'rgba(255,255,255 ,0.8)',
-                                                        marginBottom: '2'
+                                                            "rgba(255,255,255 ,0.8)",
+                                                        marginBottom: "2",
                                                     }}
                                                 >
                                                     Get help now
@@ -203,9 +200,9 @@ class IssuePage extends React.Component {
                                                 >
                                                     <InputGroup
                                                         className={classnames({
-                                                            'input-group-focus': this
+                                                            "input-group-focus": this
                                                                 .state
-                                                                .fullNameFocus
+                                                                .fullNameFocus,
                                                         })}
                                                     >
                                                         <InputGroupAddon addonType="prepend">
@@ -218,33 +215,33 @@ class IssuePage extends React.Component {
                                                             type="text"
                                                             name="user_name"
                                                             required
-                                                            onFocus={e =>
+                                                            onFocus={(e) =>
                                                                 this.setState({
-                                                                    fullNameFocus: true
+                                                                    fullNameFocus: true,
                                                                 })
                                                             }
                                                             value={
                                                                 this.state.name
                                                             }
-                                                            onChange={e =>
+                                                            onChange={(e) =>
                                                                 this.setState({
                                                                     name:
                                                                         e.target
-                                                                            .value
+                                                                            .value,
                                                                 })
                                                             }
-                                                            onBlur={e =>
+                                                            onBlur={(e) =>
                                                                 this.setState({
-                                                                    fullNameFocus: false
+                                                                    fullNameFocus: false,
                                                                 })
                                                             }
                                                         />
                                                     </InputGroup>
                                                     <InputGroup
                                                         className={classnames({
-                                                            'input-group-focus': this
+                                                            "input-group-focus": this
                                                                 .state
-                                                                .emailFocus
+                                                                .emailFocus,
                                                         })}
                                                     >
                                                         <InputGroupAddon addonType="prepend">
@@ -253,37 +250,37 @@ class IssuePage extends React.Component {
                                                             </InputGroupText>
                                                         </InputGroupAddon>
                                                         <Input
-                                                            placeholder="Email"
-                                                            type="email"
+                                                            placeholder="Email or Phone Number"
+                                                            type="text"
                                                             name="user_email"
                                                             required
                                                             value={
                                                                 this.state.email
                                                             }
-                                                            onChange={e =>
+                                                            onChange={(e) =>
                                                                 this.setState({
                                                                     email:
                                                                         e.target
-                                                                            .value
+                                                                            .value,
                                                                 })
                                                             }
-                                                            onFocus={e =>
+                                                            onFocus={(e) =>
                                                                 this.setState({
-                                                                    emailFocus: true
+                                                                    emailFocus: true,
                                                                 })
                                                             }
-                                                            onBlur={e =>
+                                                            onBlur={(e) =>
                                                                 this.setState({
-                                                                    emailFocus: false
+                                                                    emailFocus: false,
                                                                 })
                                                             }
                                                         />
                                                     </InputGroup>
                                                     <InputGroup
                                                         className={classnames({
-                                                            'input-group-focus': this
+                                                            "input-group-focus": this
                                                                 .state
-                                                                .passwordFocus
+                                                                .passwordFocus,
                                                         })}
                                                     >
                                                         <InputGroupAddon addonType="prepend">
@@ -296,24 +293,24 @@ class IssuePage extends React.Component {
                                                             placeholder="Voucher code"
                                                             type="text"
                                                             name="voucher_code"
-                                                            onFocus={e =>
+                                                            onFocus={(e) =>
                                                                 this.setState({
-                                                                    passwordFocus: true
+                                                                    passwordFocus: true,
                                                                 })
                                                             }
                                                             value={
                                                                 this.state.code
                                                             }
-                                                            onChange={e =>
+                                                            onChange={(e) =>
                                                                 this.setState({
                                                                     code:
                                                                         e.target
-                                                                            .value
+                                                                            .value,
                                                                 })
                                                             }
-                                                            onBlur={e =>
+                                                            onBlur={(e) =>
                                                                 this.setState({
-                                                                    passwordFocus: false
+                                                                    passwordFocus: false,
                                                                 })
                                                             }
                                                         />
@@ -323,7 +320,7 @@ class IssuePage extends React.Component {
                                                             for="problemText"
                                                             style={{
                                                                 marginTop:
-                                                                    '1rem'
+                                                                    "1rem",
                                                             }}
                                                         >
                                                             Describe your
@@ -338,11 +335,11 @@ class IssuePage extends React.Component {
                                                                 this.state
                                                                     .problemText
                                                             }
-                                                            onChange={e =>
+                                                            onChange={(e) =>
                                                                 this.setState({
                                                                     problemText:
                                                                         e.target
-                                                                            .value
+                                                                            .value,
                                                                 })
                                                             }
                                                         />
@@ -352,13 +349,13 @@ class IssuePage extends React.Component {
                                                         theme="dark"
                                                         onChange={() =>
                                                             this.setState({
-                                                                recaptchaCompleted: true
+                                                                recaptchaCompleted: true,
                                                             })
                                                         }
                                                     />
                                                     <Alert
                                                         style={{
-                                                            marginTop: '1rem'
+                                                            marginTop: "1rem",
                                                         }}
                                                         color="danger"
                                                         isOpen={
@@ -367,7 +364,7 @@ class IssuePage extends React.Component {
                                                         }
                                                         toggle={() =>
                                                             this.setState({
-                                                                captchaAlertIsOpen: false
+                                                                captchaAlertIsOpen: false,
                                                             })
                                                         }
                                                     >
@@ -380,7 +377,7 @@ class IssuePage extends React.Component {
                                                         color="primary"
                                                         size="lg"
                                                         style={{
-                                                            marginTop: '1rem'
+                                                            marginTop: "1rem",
                                                         }}
                                                     >
                                                         Send
@@ -388,18 +385,23 @@ class IssuePage extends React.Component {
                                                     <Alert
                                                         color="info"
                                                         isOpen={
-                                                            this.state.visible
+                                                            this.state
+                                                                .successAlertIsOpen
                                                         }
-                                                        toggle={this.onDismiss}
+                                                        toggle={() =>
+                                                            this.setState({
+                                                                successAlertIsOpen: false,
+                                                            })
+                                                        }
                                                         style={{
                                                             position:
-                                                                'relative',
-                                                            zIndex: '10000'
+                                                                "relative",
+                                                            zIndex: "10000",
                                                         }}
                                                     >
                                                         <strong>
                                                             Ticket Sent!
-                                                        </strong>{' '}
+                                                        </strong>{" "}
                                                         You should recieve help
                                                         shortly via email.
                                                     </Alert>
@@ -414,42 +416,42 @@ class IssuePage extends React.Component {
                                     className="square square-1"
                                     id="square1"
                                     style={{
-                                        transform: this.state.squares1to6
+                                        transform: this.state.squares1to6,
                                     }}
                                 />
                                 <div
                                     className="square square-2"
                                     id="square2"
                                     style={{
-                                        transform: this.state.squares1to6
+                                        transform: this.state.squares1to6,
                                     }}
                                 />
                                 <div
                                     className="square square-3"
                                     id="square3"
                                     style={{
-                                        transform: this.state.squares1to6
+                                        transform: this.state.squares1to6,
                                     }}
                                 />
                                 <div
                                     className="square square-4"
                                     id="square4"
                                     style={{
-                                        transform: this.state.squares1to6
+                                        transform: this.state.squares1to6,
                                     }}
                                 />
                                 <div
                                     className="square square-5"
                                     id="square5"
                                     style={{
-                                        transform: this.state.squares1to6
+                                        transform: this.state.squares1to6,
                                     }}
                                 />
                                 <div
                                     className="square square-6"
                                     id="square6"
                                     style={{
-                                        transform: this.state.squares1to6
+                                        transform: this.state.squares1to6,
                                     }}
                                 />
                             </Container>

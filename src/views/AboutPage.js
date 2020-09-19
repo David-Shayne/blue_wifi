@@ -15,12 +15,12 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
-import emailjs from 'emailjs-com';
-import classnames from 'classnames';
-import ReCAPTCHA from 'react-google-recaptcha';
+import React from "react";
+import emailjs from "emailjs-com";
+import classnames from "classnames";
+import ReCAPTCHA from "react-google-recaptcha";
 // javascript plugin used to create scrollbars on windows
-import PerfectScrollbar from 'perfect-scrollbar';
+import PerfectScrollbar from "perfect-scrollbar";
 // reactstrap components
 import {
     Button,
@@ -41,19 +41,19 @@ import {
     Col,
     UncontrolledTooltip,
     UncontrolledCarousel,
-    Alert
-} from 'reactstrap';
+    Alert,
+} from "reactstrap";
 
 // core components
-import PagesNavbar from 'components/Navbars/PagesNavbar.js';
-import Footer from 'components/Footer/Footer.js';
+import PagesNavbar from "components/Navbars/PagesNavbar.js";
+import Footer from "components/Footer/Footer.js";
 
 const carouselItems = [
     {
-        src: require('assets/img/townshipLife1.jpg'),
-        altText: 'Slide 1',
-        caption: 'Township Life, South Africa'
-    }
+        src: require("assets/img/townshipLife1.jpg"),
+        altText: "Slide 1",
+        caption: "Township Life, South Africa",
+    },
 ];
 
 let ps = null;
@@ -63,47 +63,47 @@ class AboutPage extends React.Component {
         super(props);
         this.state = {
             tabs: 1,
-            name: '',
-            company: '',
-            phone: '',
-            email: '',
-            message: '',
-            visible: false,
+            name: "",
+            company: "",
+            phone: "",
+            email: "",
+            message: "",
+            successAlertIsOpen: false,
             recaptchaIsCompleted: false,
-            formAlertIsOpen: false
+            formAlertIsOpen: false,
         };
 
         this.onChange = this.onChange.bind(this);
         this.sendEmail = this.sendEmail.bind(this);
     }
     componentDidMount() {
-        if (navigator.platform.indexOf('Win') > -1) {
-            document.documentElement.className += ' perfect-scrollbar-on';
-            document.documentElement.classList.remove('perfect-scrollbar-off');
-            let tables = document.querySelectorAll('.table-responsive');
+        if (navigator.platform.indexOf("Win") > -1) {
+            document.documentElement.className += " perfect-scrollbar-on";
+            document.documentElement.classList.remove("perfect-scrollbar-off");
+            let tables = document.querySelectorAll(".table-responsive");
             for (let i = 0; i < tables.length; i++) {
                 ps = new PerfectScrollbar(tables[i]);
             }
         }
-        document.body.classList.toggle('profile-page');
+        document.body.classList.toggle("profile-page");
     }
     componentWillUnmount() {
-        if (navigator.platform.indexOf('Win') > -1) {
+        if (navigator.platform.indexOf("Win") > -1) {
             ps.destroy();
-            document.documentElement.className += ' perfect-scrollbar-off';
-            document.documentElement.classList.remove('perfect-scrollbar-on');
+            document.documentElement.className += " perfect-scrollbar-off";
+            document.documentElement.classList.remove("perfect-scrollbar-on");
         }
-        document.body.classList.toggle('profile-page');
+        document.body.classList.toggle("profile-page");
     }
     onChange(e) {
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
         });
     }
     toggleTabs = (e, stateName, index) => {
         e.preventDefault();
         this.setState({
-            [stateName]: index
+            [stateName]: index,
         });
     };
 
@@ -112,20 +112,27 @@ class AboutPage extends React.Component {
         if (this.state.recaptchaIsCompleted) {
             emailjs
                 .sendForm(
-                    'gmail',
-                    'business',
-                    document.querySelector('#contact_form'),
-                    'user_wu0cjpDk07ph5E7v7cXjJ'
+                    "gmail",
+                    "business",
+                    document.querySelector("#enquiry_form"),
+                    "user_RfMWYQ64opzY6fWBL7yZe"
                 )
                 .then(
-                    result => {
+                    (result) => {
                         console.log(result);
+                        this.setState({
+                            name: "",
+                            company: "",
+                            phone: "",
+                            email: "",
+                            message: "",
+                            successAlertIsOpen: true,
+                        });
                     },
-                    error => {
+                    (error) => {
                         console.log(error.text);
                     }
                 );
-            this.setState({ visible: true });
         } else {
             this.setState({ formAlertIsOpen: true });
         }
@@ -140,12 +147,12 @@ class AboutPage extends React.Component {
                         <img
                             alt="..."
                             className="dots"
-                            src={require('assets/img/dots.png')}
+                            src={require("assets/img/dots.png")}
                         />
                         <img
                             alt="..."
                             className="path"
-                            src={require('assets/img/path4.png')}
+                            src={require("assets/img/path4.png")}
                         />
                         <Container className="align-items-center">
                             <Row>
@@ -180,12 +187,12 @@ class AboutPage extends React.Component {
                                                         className={classnames({
                                                             active:
                                                                 this.state
-                                                                    .tabs === 1
+                                                                    .tabs === 1,
                                                         })}
-                                                        onClick={e =>
+                                                        onClick={(e) =>
                                                             this.toggleTabs(
                                                                 e,
-                                                                'tabs',
+                                                                "tabs",
                                                                 1
                                                             )
                                                         }
@@ -200,12 +207,12 @@ class AboutPage extends React.Component {
                                                         className={classnames({
                                                             active:
                                                                 this.state
-                                                                    .tabs === 3
+                                                                    .tabs === 3,
                                                         })}
-                                                        onClick={e =>
+                                                        onClick={(e) =>
                                                             this.toggleTabs(
                                                                 e,
-                                                                'tabs',
+                                                                "tabs",
                                                                 3
                                                             )
                                                         }
@@ -218,7 +225,7 @@ class AboutPage extends React.Component {
                                             <TabContent
                                                 className="tab-subcategories"
                                                 activeTab={
-                                                    'tab' + this.state.tabs
+                                                    "tab" + this.state.tabs
                                                 }
                                             >
                                                 <TabPane tabId="tab1">
@@ -304,9 +311,9 @@ class AboutPage extends React.Component {
                                             className="btn-simple"
                                             color="primary"
                                             href="#pablo"
-                                            onClick={e => e.preventDefault()}
+                                            onClick={(e) => e.preventDefault()}
                                         >
-                                            <i className="tim-icons icon-book-bookmark" />{' '}
+                                            <i className="tim-icons icon-book-bookmark" />{" "}
                                             Join Newsletter
                                         </Button>
                                     </div>
@@ -327,9 +334,10 @@ class AboutPage extends React.Component {
                                         </CardHeader>
                                         <CardBody>
                                             <Form
-                                                onSubmit={e =>
+                                                onSubmit={(e) =>
                                                     this.sendEmail(e)
                                                 }
+                                                id="enquiry_form"
                                             >
                                                 <Row>
                                                     <Col md="6">
@@ -346,13 +354,13 @@ class AboutPage extends React.Component {
                                                                     this.state
                                                                         .name
                                                                 }
-                                                                onChange={e =>
+                                                                onChange={(e) =>
                                                                     this.setState(
                                                                         {
                                                                             name:
                                                                                 e
                                                                                     .target
-                                                                                    .value
+                                                                                    .value,
                                                                         }
                                                                     )
                                                                 }
@@ -373,13 +381,13 @@ class AboutPage extends React.Component {
                                                                     this.state
                                                                         .email
                                                                 }
-                                                                onChange={e =>
+                                                                onChange={(e) =>
                                                                     this.setState(
                                                                         {
                                                                             email:
                                                                                 e
                                                                                     .target
-                                                                                    .value
+                                                                                    .value,
                                                                         }
                                                                     )
                                                                 }
@@ -400,13 +408,13 @@ class AboutPage extends React.Component {
                                                                     this.state
                                                                         .phone
                                                                 }
-                                                                onChange={e =>
+                                                                onChange={(e) =>
                                                                     this.setState(
                                                                         {
                                                                             phone:
                                                                                 e
                                                                                     .target
-                                                                                    .value
+                                                                                    .value,
                                                                         }
                                                                     )
                                                                 }
@@ -427,13 +435,13 @@ class AboutPage extends React.Component {
                                                                     this.state
                                                                         .company
                                                                 }
-                                                                onChange={e =>
+                                                                onChange={(e) =>
                                                                     this.setState(
                                                                         {
                                                                             company:
                                                                                 e
                                                                                     .target
-                                                                                    .value
+                                                                                    .value,
                                                                         }
                                                                     )
                                                                 }
@@ -456,13 +464,13 @@ class AboutPage extends React.Component {
                                                                     this.state
                                                                         .message
                                                                 }
-                                                                onChange={e =>
+                                                                onChange={(e) =>
                                                                     this.setState(
                                                                         {
                                                                             message:
                                                                                 e
                                                                                     .target
-                                                                                    .value
+                                                                                    .value,
                                                                         }
                                                                     )
                                                                 }
@@ -473,16 +481,57 @@ class AboutPage extends React.Component {
                                                             theme="dark"
                                                             onChange={() =>
                                                                 this.setState({
-                                                                    recaptchaIsCompleted: true
+                                                                    recaptchaIsCompleted: true,
                                                                 })
                                                             }
                                                         />
+                                                        <Alert
+                                                            style={{
+                                                                marginTop:
+                                                                    "1rem",
+                                                            }}
+                                                            color="danger"
+                                                            isOpen={
+                                                                this.state
+                                                                    .formAlertIsOpen
+                                                            }
+                                                            toggle={() =>
+                                                                this.setState({
+                                                                    formAlertIsOpen: false,
+                                                                })
+                                                            }
+                                                        >
+                                                            Please redo Captcha
+                                                            and try again
+                                                        </Alert>
+                                                        <Alert
+                                                            style={{
+                                                                marginTop:
+                                                                    "1rem",
+                                                            }}
+                                                            color="info"
+                                                            isOpen={
+                                                                this.state
+                                                                    .successAlertIsOpen
+                                                            }
+                                                            toggle={() =>
+                                                                this.setState({
+                                                                    successAlertIsOpen: false,
+                                                                })
+                                                            }
+                                                        >
+                                                            Message Sent
+                                                        </Alert>
                                                         <Button
                                                             className="btn-round float-right"
                                                             color="primary"
                                                             data-placement="right"
                                                             id="tooltip341148792"
                                                             type="submit"
+                                                            style={{
+                                                                marginTop:
+                                                                    "1rem",
+                                                            }}
                                                         >
                                                             Send Message
                                                         </Button>
@@ -497,33 +546,6 @@ class AboutPage extends React.Component {
                                                     We'll respond shortly
                                                 </UncontrolledTooltip>
                                             </Form>
-                                            <Alert
-                                                style={{ marginTop: '1rem' }}
-                                                color="danger"
-                                                isOpen={
-                                                    this.state.formAlertIsOpen
-                                                }
-                                                toggle={() =>
-                                                    this.setState({
-                                                        formAlertIsOpen: false
-                                                    })
-                                                }
-                                            >
-                                                Please redo Captcha and try
-                                                again
-                                            </Alert>
-                                            <Alert
-                                                style={{ marginTop: '1rem' }}
-                                                color="info"
-                                                isOpen={this.state.visible}
-                                                toggle={() =>
-                                                    this.setState({
-                                                        visible: false
-                                                    })
-                                                }
-                                            >
-                                                Message Sent
-                                            </Alert>
                                         </CardBody>
                                     </Card>
                                 </Col>

@@ -477,7 +477,7 @@ class AboutPage extends React.Component {
                                                             />
                                                         </FormGroup>
                                                         <ReCAPTCHA
-                                                            sitekey="6LcPZM0ZAAAAACWzp08F9I39BnQ5Fq5ZuchIlSVV"
+                                                            sitekey="6Le1cM4ZAAAAACY7p2R7SsxWpXvW1D7aWUS2BNxy"
                                                             theme="dark"
                                                             onChange={() =>
                                                                 this.setState({

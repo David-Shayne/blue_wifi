@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
-import { Tooltip } from 'reactstrap';
+import React, { Component } from "react";
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 
 export class MapComponent extends Component {
     constructor(props) {
@@ -9,7 +8,7 @@ export class MapComponent extends Component {
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
-            selectedPlace: {}
+            selectedPlace: {},
         };
     }
 
@@ -17,22 +16,22 @@ export class MapComponent extends Component {
         this.setState({
             selectedPlace: props,
             activeMarker: marker,
-            showingInfoWindow: true
+            showingInfoWindow: true,
         });
 
-    onMapClicked = props => {
+    onMapClicked = (props) => {
         if (this.state.showingInfoWindow) {
             this.setState({
                 showingInfoWindow: false,
-                activeMarker: null
+                activeMarker: null,
             });
         }
     };
     render() {
         const containerStyle = {
-            position: 'relative',
-            width: '100%',
-            height: '100%'
+            position: "relative",
+            width: "100%",
+            height: "100%",
         };
 
         return (
@@ -40,7 +39,7 @@ export class MapComponent extends Component {
                 containerStyle={containerStyle}
                 google={this.props.google}
                 zoom={16}
-                style={{ width: '100%', height: '40vh' }}
+                style={{ width: "100%", height: "40vh" }}
                 initialCenter={{ lat: -34.130612, lng: 18.379166 }}
                 mapTypeId="SATELITE"
                 onClick={this.onMapClicked}
@@ -56,7 +55,7 @@ export class MapComponent extends Component {
                     visible={this.state.showingInfoWindow}
                 >
                     <div>
-                        <h3 style={{ color: 'black', marginBottom: '0' }}>
+                        <h3 style={{ color: "black", marginBottom: "0" }}>
                             {this.state.selectedPlace.name}
                         </h3>
                         <p>Official Voucher Reseller</p>
@@ -68,5 +67,5 @@ export class MapComponent extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyAnIQHmVqaPCdBNPkV-FZ_wR2sCiu1CUfc'
+    apiKey: "AIzaSyAnIQHmVqaPCdBNPkV-FZ_wR2sCiu1CUfc",
 })(MapComponent);

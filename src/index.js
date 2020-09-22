@@ -3,11 +3,9 @@ import ReactSEO from "react-seo";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import "assets/css/nucleo-icons.css";
-import "assets/scss/blk-design-system-react.scss?v=1.1.0";
-import "assets/demo/demo.css";
+import "assets/css/nucleo-icons.min.css";
+import "assets/css/blk-design-system-react.min.css";
 
-import Index from "views/Index.js";
 import LandingPage from "views/LandingPage.js";
 import IssuePage from "views/IssuePage.js";
 import AboutPage from "views/AboutPage.js";
@@ -28,10 +26,6 @@ function RenderDOM() {
     ReactDOM.render(
         <BrowserRouter>
             <Switch>
-                <Route
-                    path="/components"
-                    render={(props) => <Index {...props} />}
-                />
                 <Route
                     path="/issue"
                     render={(props) => <IssuePage {...props} />}

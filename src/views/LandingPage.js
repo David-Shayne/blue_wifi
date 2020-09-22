@@ -53,7 +53,7 @@ class LandingPage extends React.Component {
             <>
                 <PagesNavbar />
                 <div className="wrapper">
-                    <div className="page-header">
+                    <header className="page-header">
                         <img
                             alt="..."
                             className="path"
@@ -105,7 +105,7 @@ class LandingPage extends React.Component {
                                         background: "#0481C6",
                                     }}
                                 >
-                                    <div
+                                    <h1
                                         className="h1"
                                         style={{
                                             textAlign: "center",
@@ -113,7 +113,7 @@ class LandingPage extends React.Component {
                                         }}
                                     >
                                         We are coming soon!
-                                    </div>
+                                    </h1>
                                 </ModalHeader>
                                 <ModalBody
                                     className="h4"
@@ -156,7 +156,7 @@ class LandingPage extends React.Component {
                                 </Col>
                             </Row>
                         </div>
-                    </div>
+                    </header>
                     <section className="section section-lg">
                         <section className="section">
                             <img

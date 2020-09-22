@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
+import React from "react";
 // reactstrap components
 import {
     Button,
@@ -31,22 +31,22 @@ import {
     Col,
     Modal,
     ModalBody,
-    ModalHeader
-} from 'reactstrap';
+    ModalHeader,
+} from "reactstrap";
 
 // core components
-import PagesNavbar from 'components/Navbars/PagesNavbar.js';
-import Footer from 'components/Footer/Footer.js';
+import PagesNavbar from "./components/Navbars/PagesNavbar.js";
+import Footer from "./components/Footer/Footer.js";
 
 class LandingPage extends React.Component {
     state = {
-        comingSoonModalIsOpen: true
+        comingSoonModalIsOpen: true,
     };
     componentDidMount() {
-        document.body.classList.toggle('landing-page');
+        document.body.classList.toggle("landing-page");
     }
     componentWillUnmount() {
-        document.body.classList.toggle('landing-page');
+        document.body.classList.toggle("landing-page");
     }
     render() {
         return (
@@ -57,59 +57,59 @@ class LandingPage extends React.Component {
                         <img
                             alt="..."
                             className="path"
-                            src={require('assets/img/blob.png')}
+                            src={require("assets/img/blob.png")}
                         />
                         <img
                             alt="..."
                             className="path2"
-                            src={require('assets/img/path2.png')}
+                            src={require("assets/img/path2.png")}
                         />
                         <img
                             alt="..."
                             className="shapes triangle"
-                            src={require('assets/img/triunghiuri.png')}
+                            src={require("assets/img/triunghiuri.png")}
                         />
                         <img
                             alt="..."
                             className="shapes wave"
-                            src={require('assets/img/waves.png')}
+                            src={require("assets/img/waves.png")}
                         />
                         <img
                             alt="..."
                             className="shapes squares"
-                            src={require('assets/img/patrat.png')}
+                            src={require("assets/img/patrat.png")}
                         />
                         <img
                             alt="..."
                             className="shapes circle"
-                            src={require('assets/img/cercuri.png')}
+                            src={require("assets/img/cercuri.png")}
                         />
                         <div className="content-center">
                             <Modal
                                 isOpen={this.state.comingSoonModalIsOpen}
                                 toggle={() =>
                                     this.setState({
-                                        comingSoonModalIsOpen: false
+                                        comingSoonModalIsOpen: false,
                                     })
                                 }
                                 size="lg"
                                 style={{
-                                    textAlign: 'center',
-                                    transform: 'translate(0,30vh)'
+                                    textAlign: "center",
+                                    transform: "translate(0,30vh)",
                                 }}
                             >
                                 <ModalHeader
                                     style={{
-                                        justifyContent: 'center',
-                                        paddingTop: '4vh',
-                                        background: '#0481C6'
+                                        justifyContent: "center",
+                                        paddingTop: "4vh",
+                                        background: "#0481C6",
                                     }}
                                 >
                                     <div
                                         className="h1"
                                         style={{
-                                            textAlign: 'center',
-                                            color: 'white'
+                                            textAlign: "center",
+                                            color: "white",
                                         }}
                                     >
                                         We are coming soon!
@@ -118,10 +118,10 @@ class LandingPage extends React.Component {
                                 <ModalBody
                                     className="h4"
                                     style={{
-                                        justifyContent: 'center',
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        alignItems: 'center'
+                                        justifyContent: "center",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "center",
                                     }}
                                 >
                                     We are currently still in development...
@@ -140,7 +140,7 @@ class LandingPage extends React.Component {
                                     <div className="btn-wrapper mb-3">
                                         <a
                                             className="category text-success d-inline"
-                                            style={{ cursor: 'pointer' }}
+                                            style={{ cursor: "pointer" }}
                                             href="/pricing"
                                         >
                                             From R20 a day
@@ -151,7 +151,7 @@ class LandingPage extends React.Component {
                                     <img
                                         alt="..."
                                         className="img-fluid"
-                                        src={require('assets/img/wifi.svg')}
+                                        src={require("assets/img/wifi.svg")}
                                     />
                                 </Col>
                             </Row>
@@ -162,7 +162,7 @@ class LandingPage extends React.Component {
                             <img
                                 alt="..."
                                 className="path"
-                                src={require('assets/img/path4.png')}
+                                src={require("assets/img/path4.png")}
                             />
                             <Container>
                                 <Row className="row-grid justify-content-between">
@@ -313,7 +313,7 @@ class LandingPage extends React.Component {
                                                 className="font-weight-bold text-info mt-5"
                                                 href="/pricing"
                                             >
-                                                Voucher Pricing{' '}
+                                                Voucher Pricing{" "}
                                                 <i className="tim-icons icon-minimal-right text-info" />
                                             </a>
                                         </div>
@@ -326,17 +326,17 @@ class LandingPage extends React.Component {
                         <img
                             alt="..."
                             className="path"
-                            src={require('assets/img/path4.png')}
+                            src={require("assets/img/path4.png")}
                         />
                         <img
                             alt="..."
                             className="path2"
-                            src={require('assets/img/path5.png')}
+                            src={require("assets/img/path5.png")}
                         />
                         <img
                             alt="..."
                             className="path3"
-                            src={require('assets/img/path2.png')}
+                            src={require("assets/img/path2.png")}
                         />
                         <Container>
                             <Row className="justify-content-center">
@@ -410,7 +410,7 @@ class LandingPage extends React.Component {
                         <img
                             alt="..."
                             className="path"
-                            src={require('assets/img/path5.png')}
+                            src={require("assets/img/path5.png")}
                         />
                         <Container>
                             <Row className="row-grid justify-content-between">
@@ -418,7 +418,7 @@ class LandingPage extends React.Component {
                                     <img
                                         alt="..."
                                         className="img-fluid floating"
-                                        src={require('assets/img/data.svg')}
+                                        src={require("assets/img/data.svg")}
                                     />
                                     <Card className="card-stats bg-danger">
                                         <CardBody>
@@ -521,14 +521,14 @@ class LandingPage extends React.Component {
                         <img
                             alt="..."
                             className="path"
-                            src={require('assets/img/path3.png')}
+                            src={require("assets/img/path3.png")}
                         />
                         <Container>
                             <Row>
                                 <Col md="4">
                                     <hr className="line-info" />
                                     <h1>
-                                        Choose the voucher{' '}
+                                        Choose the voucher{" "}
                                         <span className="text-info">
                                             that fits your needs
                                         </span>
@@ -542,7 +542,7 @@ class LandingPage extends React.Component {
                                             <img
                                                 alt="..."
                                                 className="img-center img-fluid"
-                                                src={require('assets/img/bronze.png')}
+                                                src={require("assets/img/bronze.png")}
                                             />
                                         </CardHeader>
                                         <CardBody>
@@ -558,7 +558,7 @@ class LandingPage extends React.Component {
                                                         className="line-primary"
                                                         style={{
                                                             background:
-                                                                '#DD9773'
+                                                                "#DD9773",
                                                         }}
                                                     />
                                                 </Col>
@@ -582,8 +582,8 @@ class LandingPage extends React.Component {
                                                 className="btn-simple"
                                                 color="primary"
                                                 style={{
-                                                    color: '#DD9773',
-                                                    borderColor: '#DD9773'
+                                                    color: "#DD9773",
+                                                    borderColor: "#DD9773",
                                                 }}
                                             >
                                                 R20
@@ -597,7 +597,7 @@ class LandingPage extends React.Component {
                                             <img
                                                 alt="..."
                                                 className="img-center img-fluid"
-                                                src={require('assets/img/silver.png')}
+                                                src={require("assets/img/silver.png")}
                                             />
                                         </CardHeader>
                                         <CardBody>
@@ -613,7 +613,7 @@ class LandingPage extends React.Component {
                                                         className="line-success"
                                                         style={{
                                                             background:
-                                                                '#E6F2F5'
+                                                                "#E6F2F5",
                                                         }}
                                                     />
                                                 </Col>
@@ -637,8 +637,8 @@ class LandingPage extends React.Component {
                                                 className="btn-simple"
                                                 color="success"
                                                 style={{
-                                                    color: '#E6F2F5',
-                                                    borderColor: '#E6F2F5'
+                                                    color: "#E6F2F5",
+                                                    borderColor: "#E6F2F5",
                                                 }}
                                             >
                                                 R120
@@ -652,7 +652,7 @@ class LandingPage extends React.Component {
                                             <img
                                                 alt="..."
                                                 className="img-center img-fluid"
-                                                src={require('assets/img/gold.png')}
+                                                src={require("assets/img/gold.png")}
                                             />
                                         </CardHeader>
                                         <CardBody>
@@ -668,7 +668,7 @@ class LandingPage extends React.Component {
                                                         className="line-info"
                                                         style={{
                                                             background:
-                                                                '#E7BC6A'
+                                                                "#E7BC6A",
                                                         }}
                                                     />
                                                 </Col>
@@ -692,8 +692,8 @@ class LandingPage extends React.Component {
                                                 className="btn-simple"
                                                 color="info"
                                                 style={{
-                                                    color: '#E7BC6A',
-                                                    borderColor: '#E7BC6A'
+                                                    color: "#E7BC6A",
+                                                    borderColor: "#E7BC6A",
                                                 }}
                                             >
                                                 R380

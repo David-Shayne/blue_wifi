@@ -45,8 +45,8 @@ import {
 } from "reactstrap";
 
 // core components
-import PagesNavbar from "components/Navbars/PagesNavbar.js";
-import Footer from "components/Footer/Footer.js";
+import PagesNavbar from "./components/Navbars/PagesNavbar.js";
+import Footer from "./components/Footer/Footer.js";
 
 const carouselItems = [
     {

@@ -1,5 +1,5 @@
-import React from 'react';
-import MapComponent from '../components/MapComponent';
+import React from "react";
+import MapComponent from "../components/MapComponent";
 // reactstrap components
 import {
     Button,
@@ -14,12 +14,12 @@ import {
     Col,
     Modal,
     ModalBody,
-    ModalHeader
-} from 'reactstrap';
+    ModalHeader,
+} from "reactstrap";
 
 // core components
-import PagesNavbar from 'components/Navbars/PagesNavbar.js';
-import Footer from 'components/Footer/Footer.js';
+import PagesNavbar from "./components/Navbars/PagesNavbar.js";
+import Footer from "./components/Footer/Footer.js";
 class PricingPage extends React.Component {
     constructor(props) {
         super(props);
@@ -28,13 +28,13 @@ class PricingPage extends React.Component {
         this.toggleModal = this.toggleModal.bind(this);
     }
     componentDidMount() {
-        document.body.classList.toggle('landing-page');
+        document.body.classList.toggle("landing-page");
     }
     componentWillUnmount() {
-        document.body.classList.toggle('landing-page');
+        document.body.classList.toggle("landing-page");
     }
     toggleModal() {
-        this.setState(state => ({ modalIsOpen: !state.modalIsOpen }));
+        this.setState((state) => ({ modalIsOpen: !state.modalIsOpen }));
     }
     render() {
         return (
@@ -45,20 +45,20 @@ class PricingPage extends React.Component {
                     toggle={this.toggleModal}
                     size="lg"
                     style={{
-                        textAlign: 'center',
-                        transform: 'translate(0,10%)'
+                        textAlign: "center",
+                        transform: "translate(0,10%)",
                     }}
                 >
                     <ModalHeader
                         style={{
-                            justifyContent: 'center',
-                            paddingTop: '4vh',
-                            background: '#0481C6'
+                            justifyContent: "center",
+                            paddingTop: "4vh",
+                            background: "#0481C6",
                         }}
                     >
                         <div
                             className="h1"
-                            style={{ textAlign: 'center', color: 'white' }}
+                            style={{ textAlign: "center", color: "white" }}
                         >
                             Get your voucher today
                         </div>
@@ -66,10 +66,10 @@ class PricingPage extends React.Component {
                     <ModalBody
                         className="h4"
                         style={{
-                            justifyContent: 'center',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center'
+                            justifyContent: "center",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
                         }}
                     >
                         Purchase a voucher at the "4 way stop" spaza shop at 26
@@ -77,9 +77,9 @@ class PricingPage extends React.Component {
                         <div
                             className="map"
                             style={{
-                                width: '90%',
-                                height: '30rem',
-                                marginTop: '3.33vh'
+                                width: "90%",
+                                height: "30rem",
+                                marginTop: "3.33vh",
                             }}
                         >
                             <MapComponent />
@@ -87,14 +87,14 @@ class PricingPage extends React.Component {
                     </ModalBody>
                 </Modal>
 
-                <div className="wrapper" style={{ paddingTop: '16vh' }}>
+                <div className="wrapper" style={{ paddingTop: "16vh" }}>
                     <div className="section">
                         <Container className="align-items-center">
                             <h1
                                 style={{
-                                    margin: '0 auto',
-                                    marginBottom: '5vh',
-                                    textAlign: 'center'
+                                    margin: "0 auto",
+                                    marginBottom: "5vh",
+                                    textAlign: "center",
                                 }}
                             >
                                 Buy vouchers at the "4 way stop" Spaza Shop
@@ -102,9 +102,9 @@ class PricingPage extends React.Component {
                             <hr
                                 className="line-info"
                                 style={{
-                                    marginBottom: '15vh',
-                                    textAlign: 'center',
-                                    width: '100%'
+                                    marginBottom: "15vh",
+                                    textAlign: "center",
+                                    width: "100%",
                                 }}
                             />
 
@@ -115,7 +115,7 @@ class PricingPage extends React.Component {
                                             <img
                                                 alt="..."
                                                 className="img-center img-fluid"
-                                                src={require('assets/img/bronze.png')}
+                                                src={require("assets/img/bronze.png")}
                                             />
                                         </CardHeader>
                                         <CardBody>
@@ -127,7 +127,7 @@ class PricingPage extends React.Component {
                                                     <h4
                                                         className="text-uppercase"
                                                         style={{
-                                                            color: 'white'
+                                                            color: "white",
                                                         }}
                                                     >
                                                         Day Voucher
@@ -136,7 +136,7 @@ class PricingPage extends React.Component {
                                                         className="line-primary"
                                                         style={{
                                                             background:
-                                                                '#DD9773'
+                                                                "#DD9773",
                                                         }}
                                                     />
                                                 </Col>
@@ -146,7 +146,7 @@ class PricingPage extends React.Component {
                                                     <ListGroupItem
                                                         style={{
                                                             color:
-                                                                'rgba(255,255,255,0.8)'
+                                                                "rgba(255,255,255,0.8)",
                                                         }}
                                                     >
                                                         6mbp/s Speed
@@ -154,7 +154,7 @@ class PricingPage extends React.Component {
                                                     <ListGroupItem
                                                         style={{
                                                             color:
-                                                                'rgba(255,255,255,0.8)'
+                                                                "rgba(255,255,255,0.8)",
                                                         }}
                                                     >
                                                         Unlimited Data
@@ -162,7 +162,7 @@ class PricingPage extends React.Component {
                                                     <ListGroupItem
                                                         style={{
                                                             color:
-                                                                'rgba(255,255,255,0.8)'
+                                                                "rgba(255,255,255,0.8)",
                                                         }}
                                                     >
                                                         24/7 Support
@@ -175,8 +175,8 @@ class PricingPage extends React.Component {
                                                 className="btn-simple"
                                                 color="primary"
                                                 style={{
-                                                    color: '#DD9773',
-                                                    borderColor: '#DD9773'
+                                                    color: "#DD9773",
+                                                    borderColor: "#DD9773",
                                                 }}
                                                 onClick={this.toggleModal}
                                             >
@@ -191,7 +191,7 @@ class PricingPage extends React.Component {
                                             <img
                                                 alt="..."
                                                 className="img-center img-fluid"
-                                                src={require('assets/img/silver.png')}
+                                                src={require("assets/img/silver.png")}
                                             />
                                         </CardHeader>
                                         <CardBody>
@@ -203,7 +203,7 @@ class PricingPage extends React.Component {
                                                     <h4
                                                         className="text-uppercase"
                                                         style={{
-                                                            color: 'white'
+                                                            color: "white",
                                                         }}
                                                     >
                                                         Week Voucher
@@ -212,7 +212,7 @@ class PricingPage extends React.Component {
                                                         className="line-success"
                                                         style={{
                                                             background:
-                                                                '#E6F2F5'
+                                                                "#E6F2F5",
                                                         }}
                                                     />
                                                 </Col>
@@ -222,7 +222,7 @@ class PricingPage extends React.Component {
                                                     <ListGroupItem
                                                         style={{
                                                             color:
-                                                                'rgba(255,255,255,0.8)'
+                                                                "rgba(255,255,255,0.8)",
                                                         }}
                                                     >
                                                         6mbp/s Speed
@@ -230,7 +230,7 @@ class PricingPage extends React.Component {
                                                     <ListGroupItem
                                                         style={{
                                                             color:
-                                                                'rgba(255,255,255,0.8)'
+                                                                "rgba(255,255,255,0.8)",
                                                         }}
                                                     >
                                                         Unlimited Data
@@ -238,7 +238,7 @@ class PricingPage extends React.Component {
                                                     <ListGroupItem
                                                         style={{
                                                             color:
-                                                                'rgba(255,255,255,0.8)'
+                                                                "rgba(255,255,255,0.8)",
                                                         }}
                                                     >
                                                         24/7 Support
@@ -251,8 +251,8 @@ class PricingPage extends React.Component {
                                                 className="btn-simple"
                                                 color="success"
                                                 style={{
-                                                    color: '#E6F2F5',
-                                                    borderColor: '#E6F2F5'
+                                                    color: "#E6F2F5",
+                                                    borderColor: "#E6F2F5",
                                                 }}
                                                 onClick={this.toggleModal}
                                             >
@@ -267,7 +267,7 @@ class PricingPage extends React.Component {
                                             <img
                                                 alt="..."
                                                 className="img-center img-fluid"
-                                                src={require('assets/img/gold.png')}
+                                                src={require("assets/img/gold.png")}
                                             />
                                         </CardHeader>
                                         <CardBody>
@@ -279,7 +279,7 @@ class PricingPage extends React.Component {
                                                     <h4
                                                         className="text-uppercase"
                                                         style={{
-                                                            color: 'white'
+                                                            color: "white",
                                                         }}
                                                     >
                                                         Month Voucher
@@ -288,7 +288,7 @@ class PricingPage extends React.Component {
                                                         className="line-info"
                                                         style={{
                                                             background:
-                                                                '#E7BC6A'
+                                                                "#E7BC6A",
                                                         }}
                                                     />
                                                 </Col>
@@ -298,7 +298,7 @@ class PricingPage extends React.Component {
                                                     <ListGroupItem
                                                         style={{
                                                             color:
-                                                                'rgba(255,255,255,0.8)'
+                                                                "rgba(255,255,255,0.8)",
                                                         }}
                                                     >
                                                         6mbp/s Speed
@@ -306,7 +306,7 @@ class PricingPage extends React.Component {
                                                     <ListGroupItem
                                                         style={{
                                                             color:
-                                                                'rgba(255,255,255,0.8)'
+                                                                "rgba(255,255,255,0.8)",
                                                         }}
                                                     >
                                                         Unlimited Data
@@ -314,7 +314,7 @@ class PricingPage extends React.Component {
                                                     <ListGroupItem
                                                         style={{
                                                             color:
-                                                                'rgba(255,255,255,0.8)'
+                                                                "rgba(255,255,255,0.8)",
                                                         }}
                                                     >
                                                         24/7 Support
@@ -327,8 +327,8 @@ class PricingPage extends React.Component {
                                                 className="btn-simple"
                                                 color="info"
                                                 style={{
-                                                    color: '#E7BC6A',
-                                                    borderColor: '#E7BC6A'
+                                                    color: "#E7BC6A",
+                                                    borderColor: "#E7BC6A",
                                                 }}
                                                 onClick={this.toggleModal}
                                             >

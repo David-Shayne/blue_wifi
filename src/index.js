@@ -3,13 +3,13 @@ import ReactSEO from "react-seo";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import "assets/css/nucleo-icons.min.css";
-import "assets/css/blk-design-system-react.min.css";
+import "./assets/css/nucleo-icons.min.css";
+import "./assets/css/blk-design-system-react.min.css";
 
-import LandingPage from "views/LandingPage.js";
-import IssuePage from "views/IssuePage.js";
-import AboutPage from "views/AboutPage.js";
-import PricingPage from "views/PricingPage.js";
+import LandingPage from "./views/LandingPage";
+import IssuePage from "./views/IssuePage";
+import AboutPage from "./views/AboutPage";
+import PricingPage from "./views/PricingPage";
 
 ReactSEO.startMagic(
     [

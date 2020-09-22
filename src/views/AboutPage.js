@@ -50,7 +50,7 @@ import Footer from "../components/Footer/Footer.js";
 
 const carouselItems = [
     {
-        src: require("assets/img/townshipLife1.jpg"),
+        src: require("../assets/img/townshipLife1.jpg"),
         altText: "Slide 1",
         caption: "Township Life, South Africa",
     },
@@ -147,12 +147,12 @@ class AboutPage extends React.Component {
                         <img
                             alt="..."
                             className="dots"
-                            src={require("assets/img/dots.png")}
+                            src={require("../assets/img/dots.png")}
                         />
                         <img
                             alt="..."
                             className="path"
-                            src={require("assets/img/path4.png")}
+                            src={require("../assets/img/path4.png")}
                         />
                         <Container className="align-items-center">
                             <Row>

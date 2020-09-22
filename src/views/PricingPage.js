@@ -115,7 +115,7 @@ class PricingPage extends React.Component {
                                             <img
                                                 alt="..."
                                                 className="img-center img-fluid"
-                                                src={require("assets/img/bronze.png")}
+                                                src={require("../assets/img/bronze.png")}
                                             />
                                         </CardHeader>
                                         <CardBody>
@@ -191,7 +191,7 @@ class PricingPage extends React.Component {
                                             <img
                                                 alt="..."
                                                 className="img-center img-fluid"
-                                                src={require("assets/img/silver.png")}
+                                                src={require("../assets/img/silver.png")}
                                             />
                                         </CardHeader>
                                         <CardBody>
@@ -267,7 +267,7 @@ class PricingPage extends React.Component {
                                             <img
                                                 alt="..."
                                                 className="img-center img-fluid"
-                                                src={require("assets/img/gold.png")}
+                                                src={require("../assets/img/gold.png")}
                                             />
                                         </CardHeader>
                                         <CardBody>

@@ -18,8 +18,8 @@ import {
 } from "reactstrap";
 
 // core components
-import PagesNavbar from "./components/Navbars/PagesNavbar.js";
-import Footer from "./components/Footer/Footer.js";
+import PagesNavbar from "../components/Navbars/PagesNavbar.js";
+import Footer from "../components/Footer/Footer.js";
 class PricingPage extends React.Component {
     constructor(props) {
         super(props);

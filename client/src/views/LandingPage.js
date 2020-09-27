@@ -76,11 +76,6 @@ class LandingPage extends React.Component {
                         />
                         <img
                             alt="..."
-                            className="shapes squares"
-                            src={require("../assets/img/patrat.png")}
-                        />
-                        <img
-                            alt="..."
                             className="shapes circle"
                             src={require("../assets/img/cercuri.png")}
                         />
@@ -341,7 +336,13 @@ class LandingPage extends React.Component {
                         <Container>
                             <Row className="justify-content-center">
                                 <Col lg="12">
-                                    <h1 className="text-center">
+                                    <h1
+                                        className="text-center"
+                                        style={{
+                                            margin: "0 auto",
+                                            marginBottom: "-5vh",
+                                        }}
+                                    >
                                         Bringing you only the best
                                     </h1>
                                     <Row className="row-grid justify-content-center">
@@ -518,11 +519,11 @@ class LandingPage extends React.Component {
                     </section>
 
                     <section className="section section-lg section-coins">
-                        <img
+                        {/* <img
                             alt="..."
                             className="path"
                             src={require("../assets/img/path3.png")}
-                        />
+                        /> */}
                         <Container>
                             <Row>
                                 <Col md="4">

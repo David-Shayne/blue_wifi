@@ -15,8 +15,8 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 // reactstrap components
 import {
     Button,
@@ -28,22 +28,22 @@ import {
     Nav,
     Container,
     Row,
-    Col
-} from 'reactstrap';
+    Col,
+} from "reactstrap";
 
 class PagesNavbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             collapseOpen: false,
-            color: 'navbar-transparent'
+            color: "navbar-transparent",
         };
     }
     componentDidMount() {
-        window.addEventListener('scroll', this.changeColor);
+        window.addEventListener("scroll", this.changeColor);
     }
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.changeColor);
+        window.removeEventListener("scroll", this.changeColor);
     }
     changeColor = () => {
         if (
@@ -51,37 +51,37 @@ class PagesNavbar extends React.Component {
             document.body.scrollTop > 99
         ) {
             this.setState({
-                color: 'bg-info'
+                color: "bg-info",
             });
         } else if (
             document.documentElement.scrollTop < 100 ||
             document.body.scrollTop < 100
         ) {
             this.setState({
-                color: 'navbar-transparent'
+                color: "navbar-transparent",
             });
         }
     };
     toggleCollapse = () => {
-        document.documentElement.classList.toggle('nav-open');
+        document.documentElement.classList.toggle("nav-open");
         this.setState({
-            collapseOpen: !this.state.collapseOpen
+            collapseOpen: !this.state.collapseOpen,
         });
     };
     onCollapseExiting = () => {
         this.setState({
-            collapseOut: 'collapsing-out'
+            collapseOut: "collapsing-out",
         });
     };
     onCollapseExited = () => {
         this.setState({
-            collapseOut: ''
+            collapseOut: "",
         });
     };
     render() {
         return (
             <Navbar
-                className={'fixed-top ' + this.state.color}
+                className={"fixed-top " + this.state.color}
                 color-on-scroll="100"
                 expand="lg"
             >
@@ -89,7 +89,7 @@ class PagesNavbar extends React.Component {
                     <div className="navbar-translate small">
                         <NavbarBrand to="/" id="navbar-brand" tag={Link}>
                             <img
-                                src={require('../../assets/img/logo.png')}
+                                src={require("../../assets/img/logo.png")}
                                 alt=""
                             />
                         </NavbarBrand>
@@ -106,7 +106,7 @@ class PagesNavbar extends React.Component {
                     </div>
                     <Collapse
                         className={
-                            'justify-content-end ' + this.state.collapseOut
+                            "justify-content-end " + this.state.collapseOut
                         }
                         navbar
                         isOpen={this.state.collapseOpen}
@@ -118,7 +118,7 @@ class PagesNavbar extends React.Component {
                                 <Col className="collapse-brand" xs="6">
                                     <a
                                         href="#pablo"
-                                        onClick={e => e.preventDefault()}
+                                        onClick={(e) => e.preventDefault()}
                                     >
                                         Blue Wifi
                                     </a>
@@ -137,7 +137,7 @@ class PagesNavbar extends React.Component {
                                 </Col>
                             </Row>
                         </div>
-                        <Nav navbar>
+                        <Nav navbar style={{ alignItems: "center" }}>
                             <NavItem className="p-0">
                                 <NavLink
                                     data-placement="bottom"
@@ -183,17 +183,20 @@ class PagesNavbar extends React.Component {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/issue">Have an issue?</NavLink>
+                                <NavLink tag={Link} to="/issue">
+                                    Have an issue?
+                                </NavLink>
                             </NavItem>
                             <NavItem>
-                                <Button
-                                    className="nav-link  d-lg-block"
-                                    color="primary"
-                                    href="/pricing"
-                                >
-                                    <i className="tim-icons icon-coins" /> Buy a
-                                    voucher
-                                </Button>
+                                <NavLink to="/pricing" tag={Link}>
+                                    <Button
+                                        className="nav-link  d-lg-block"
+                                        color="primary"
+                                    >
+                                        <i className="tim-icons icon-coins" />{" "}
+                                        Buy a voucher
+                                    </Button>
+                                </NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>

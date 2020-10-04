@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // reactstrap components
 import {
     Button,
@@ -31,100 +31,100 @@ import {
     Col,
     Modal,
     ModalBody,
-    ModalHeader,
-} from "reactstrap";
+    ModalHeader
+} from 'reactstrap';
 
 // core components
-import PagesNavbar from "../components/Navbars/PagesNavbar.js";
-import Footer from "../components/Footer/Footer.js";
+import PagesNavbar from '../components/Navbars/PagesNavbar.js';
+import Footer from '../components/Footer/Footer.js';
 
 class LandingPage extends React.Component {
     state = {
-        comingSoonModalIsOpen: true,
+        comingSoonModalIsOpen: false
     };
     componentDidMount() {
-        document.body.classList.toggle("landing-page");
+        document.body.classList.toggle('landing-page');
     }
     componentWillUnmount() {
-        document.body.classList.toggle("landing-page");
+        document.body.classList.toggle('landing-page');
     }
     render() {
         return (
             <>
                 <PagesNavbar />
-                <div className="wrapper">
-                    <header className="page-header">
+                <div className='wrapper'>
+                    <header className='page-header'>
                         <img
-                            alt="..."
-                            className="path"
-                            src={require("../assets/img/blob.png")}
+                            alt='...'
+                            className='path'
+                            src={require('../assets/img/blob.png')}
                         />
                         <img
-                            alt="..."
-                            className="path2"
-                            src={require("../assets/img/path2.png")}
+                            alt='...'
+                            className='path2'
+                            src={require('../assets/img/path2.png')}
                         />
                         <img
-                            alt="..."
-                            className="shapes triangle"
-                            src={require("../assets/img/triunghiuri.png")}
+                            alt='...'
+                            className='shapes triangle'
+                            src={require('../assets/img/triunghiuri.png')}
                         />
                         <img
-                            alt="..."
-                            className="shapes wave"
-                            src={require("../assets/img/waves.png")}
+                            alt='...'
+                            className='shapes wave'
+                            src={require('../assets/img/waves.png')}
                         />
                         <img
-                            alt="..."
-                            className="shapes circle"
-                            src={require("../assets/img/cercuri.png")}
+                            alt='...'
+                            className='shapes circle'
+                            src={require('../assets/img/cercuri.png')}
                         />
-                        <div className="content-center">
+                        <div className='content-center'>
                             <Modal
                                 isOpen={this.state.comingSoonModalIsOpen}
                                 toggle={() =>
                                     this.setState({
-                                        comingSoonModalIsOpen: false,
+                                        comingSoonModalIsOpen: false
                                     })
                                 }
-                                size="lg"
+                                size='lg'
                                 style={{
-                                    textAlign: "center",
-                                    transform: "translate(0,30vh)",
+                                    textAlign: 'center',
+                                    transform: 'translate(0,30vh)'
                                 }}
                             >
                                 <ModalHeader
                                     style={{
-                                        justifyContent: "center",
-                                        paddingTop: "4vh",
-                                        background: "#0481C6",
+                                        justifyContent: 'center',
+                                        paddingTop: '4vh',
+                                        background: '#0481C6'
                                     }}
                                 >
                                     <h1
-                                        className="h1"
+                                        className='h1'
                                         style={{
-                                            textAlign: "center",
-                                            color: "white",
+                                            textAlign: 'center',
+                                            color: 'white'
                                         }}
                                     >
                                         We are coming soon!
                                     </h1>
                                 </ModalHeader>
                                 <ModalBody
-                                    className="h4"
+                                    className='h4'
                                     style={{
-                                        justifyContent: "center",
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        alignItems: "center",
+                                        justifyContent: 'center',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center'
                                     }}
                                 >
                                     We are currently still in development...
                                 </ModalBody>
                             </Modal>
-                            <Row className="row-grid justify-content-between align-items-center text-left">
-                                <Col lg="6" md="6">
-                                    <h1 className="text-white title">
+                            <Row className='row-grid justify-content-between align-items-center text-left'>
+                                <Col lg='6' md='6'>
+                                    <h1 className='text-white title'>
                                         Unlimited Data <br />
                                         Great Connection
                                         <br />
@@ -132,57 +132,57 @@ class LandingPage extends React.Component {
                                     </h1>
                                     <p>For the community, By the community</p>
 
-                                    <div className="btn-wrapper mb-3">
+                                    <div className='btn-wrapper mb-3'>
                                         <a
-                                            className="category text-success d-inline"
-                                            style={{ cursor: "pointer" }}
-                                            href="/pricing"
+                                            className='category text-success d-inline'
+                                            style={{ cursor: 'pointer' }}
+                                            href='/pricing'
                                         >
                                             From R20 a day
                                         </a>
                                     </div>
                                 </Col>
-                                <Col lg="4" md="5">
+                                <Col lg='4' md='5'>
                                     <img
-                                        alt="..."
-                                        className="img-fluid"
-                                        src={require("../assets/img/wifi.svg")}
+                                        alt='...'
+                                        className='img-fluid'
+                                        src={require('../assets/img/wifi.svg')}
                                     />
                                 </Col>
                             </Row>
                         </div>
                     </header>
-                    <section className="section section-lg">
-                        <section className="section">
+                    <section className='section section-lg'>
+                        <section className='section'>
                             <img
-                                alt="..."
-                                className="path"
-                                src={require("../assets/img/path4.png")}
+                                alt='...'
+                                className='path'
+                                src={require('../assets/img/path4.png')}
                             />
                             <Container>
-                                <Row className="row-grid justify-content-between">
-                                    <Col className="mt-lg-5" md="5">
+                                <Row className='row-grid justify-content-between'>
+                                    <Col className='mt-lg-5' md='5'>
                                         <Row>
                                             <Col
-                                                className="px-2 py-2"
-                                                lg="6"
-                                                sm="12"
+                                                className='px-2 py-2'
+                                                lg='6'
+                                                sm='12'
                                             >
-                                                <Card className="card-stats">
+                                                <Card className='card-stats'>
                                                     <CardBody>
                                                         <Row>
-                                                            <Col md="4" xs="5">
-                                                                <div className="icon-big text-center icon-warning">
-                                                                    <i className="tim-icons icon-trophy text-warning" />
+                                                            <Col md='4' xs='5'>
+                                                                <div className='icon-big text-center icon-warning'>
+                                                                    <i className='tim-icons icon-trophy text-warning' />
                                                                 </div>
                                                             </Col>
-                                                            <Col md="8" xs="7">
-                                                                <div className="numbers">
-                                                                    <CardTitle tag="p">
+                                                            <Col md='8' xs='7'>
+                                                                <div className='numbers'>
+                                                                    <CardTitle tag='p'>
                                                                         Great
                                                                     </CardTitle>
                                                                     <p />
-                                                                    <p className="card-category">
+                                                                    <p className='card-category'>
                                                                         Service
                                                                     </p>
                                                                 </div>
@@ -192,25 +192,25 @@ class LandingPage extends React.Component {
                                                 </Card>
                                             </Col>
                                             <Col
-                                                className="px-2 py-2"
-                                                lg="6"
-                                                sm="12"
+                                                className='px-2 py-2'
+                                                lg='6'
+                                                sm='12'
                                             >
-                                                <Card className="card-stats upper bg-default">
+                                                <Card className='card-stats upper bg-default'>
                                                     <CardBody>
                                                         <Row>
-                                                            <Col md="4" xs="5">
-                                                                <div className="icon-big text-center icon-warning">
-                                                                    <i className="tim-icons icon-coins text-white" />
+                                                            <Col md='4' xs='5'>
+                                                                <div className='icon-big text-center icon-warning'>
+                                                                    <i className='tim-icons icon-coins text-white' />
                                                                 </div>
                                                             </Col>
-                                                            <Col md="8" xs="7">
-                                                                <div className="numbers">
-                                                                    <CardTitle tag="p">
+                                                            <Col md='8' xs='7'>
+                                                                <div className='numbers'>
+                                                                    <CardTitle tag='p'>
                                                                         R20
                                                                     </CardTitle>
                                                                     <p />
-                                                                    <p className="card-category">
+                                                                    <p className='card-category'>
                                                                         a Day
                                                                     </p>
                                                                 </div>
@@ -222,25 +222,25 @@ class LandingPage extends React.Component {
                                         </Row>
                                         <Row>
                                             <Col
-                                                className="px-2 py-2"
-                                                lg="6"
-                                                sm="12"
+                                                className='px-2 py-2'
+                                                lg='6'
+                                                sm='12'
                                             >
-                                                <Card className="card-stats">
+                                                <Card className='card-stats'>
                                                     <CardBody>
                                                         <Row>
-                                                            <Col md="4" xs="5">
-                                                                <div className="icon-big text-center icon-warning">
-                                                                    <i className="tim-icons icon-gift-2 text-info" />
+                                                            <Col md='4' xs='5'>
+                                                                <div className='icon-big text-center icon-warning'>
+                                                                    <i className='tim-icons icon-gift-2 text-info' />
                                                                 </div>
                                                             </Col>
-                                                            <Col md="8" xs="7">
-                                                                <div className="numbers">
-                                                                    <CardTitle tag="p">
+                                                            <Col md='8' xs='7'>
+                                                                <div className='numbers'>
+                                                                    <CardTitle tag='p'>
                                                                         Free
                                                                     </CardTitle>
                                                                     <p />
-                                                                    <p className="card-category">
+                                                                    <p className='card-category'>
                                                                         1 day
                                                                         voucher
                                                                     </p>
@@ -251,25 +251,25 @@ class LandingPage extends React.Component {
                                                 </Card>
                                             </Col>
                                             <Col
-                                                className="px-2 py-2"
-                                                lg="6"
-                                                sm="12"
+                                                className='px-2 py-2'
+                                                lg='6'
+                                                sm='12'
                                             >
-                                                <Card className="card-stats">
+                                                <Card className='card-stats'>
                                                     <CardBody>
                                                         <Row>
-                                                            <Col md="4" xs="5">
-                                                                <div className="icon-big text-center icon-warning">
-                                                                    <i className="tim-icons icon-credit-card text-success" />
+                                                            <Col md='4' xs='5'>
+                                                                <div className='icon-big text-center icon-warning'>
+                                                                    <i className='tim-icons icon-credit-card text-success' />
                                                                 </div>
                                                             </Col>
-                                                            <Col md="8" xs="7">
-                                                                <div className="numbers">
-                                                                    <CardTitle tag="p">
+                                                            <Col md='8' xs='7'>
+                                                                <div className='numbers'>
+                                                                    <CardTitle tag='p'>
                                                                         Super
                                                                     </CardTitle>
                                                                     <p />
-                                                                    <p className="card-category">
+                                                                    <p className='card-category'>
                                                                         Connection
                                                                     </p>
                                                                 </div>
@@ -280,8 +280,8 @@ class LandingPage extends React.Component {
                                             </Col>
                                         </Row>
                                     </Col>
-                                    <Col md="6">
-                                        <div className="pl-md-5">
+                                    <Col md='6'>
+                                        <div className='pl-md-5'>
                                             <h1>
                                                 Unlimited Data <br />
                                                 Unlimited Power
@@ -305,11 +305,11 @@ class LandingPage extends React.Component {
                                             </p>
                                             <br />
                                             <a
-                                                className="font-weight-bold text-info mt-5"
-                                                href="/pricing"
+                                                className='font-weight-bold text-info mt-5'
+                                                href='/pricing'
                                             >
-                                                Voucher Pricing{" "}
-                                                <i className="tim-icons icon-minimal-right text-info" />
+                                                Voucher Pricing{' '}
+                                                <i className='tim-icons icon-minimal-right text-info' />
                                             </a>
                                         </div>
                                     </Col>
@@ -317,44 +317,44 @@ class LandingPage extends React.Component {
                             </Container>
                         </section>
                     </section>
-                    <section className="section section-lg">
+                    <section className='section section-lg'>
                         <img
-                            alt="..."
-                            className="path"
-                            src={require("../assets/img/path4.png")}
+                            alt='...'
+                            className='path'
+                            src={require('../assets/img/path4.png')}
                         />
                         <img
-                            alt="..."
-                            className="path2"
-                            src={require("../assets/img/path5.png")}
+                            alt='...'
+                            className='path2'
+                            src={require('../assets/img/path5.png')}
                         />
                         <img
-                            alt="..."
-                            className="path3"
-                            src={require("../assets/img/path2.png")}
+                            alt='...'
+                            className='path3'
+                            src={require('../assets/img/path2.png')}
                         />
                         <Container>
-                            <Row className="justify-content-center">
-                                <Col lg="12">
+                            <Row className='justify-content-center'>
+                                <Col lg='12'>
                                     <h1
-                                        className="text-center"
+                                        className='text-center'
                                         style={{
-                                            margin: "0 auto",
-                                            marginBottom: "-5vh",
+                                            margin: '0 auto',
+                                            marginBottom: '-5vh'
                                         }}
                                     >
                                         Bringing you only the best
                                     </h1>
-                                    <Row className="row-grid justify-content-center">
-                                        <Col lg="3">
-                                            <div className="info">
-                                                <div className="icon icon-primary">
-                                                    <i className="tim-icons icon-money-coins" />
+                                    <Row className='row-grid justify-content-center'>
+                                        <Col lg='3'>
+                                            <div className='info'>
+                                                <div className='icon icon-primary'>
+                                                    <i className='tim-icons icon-money-coins' />
                                                 </div>
-                                                <h4 className="info-title">
+                                                <h4 className='info-title'>
                                                     Low Cost
                                                 </h4>
-                                                <hr className="line-primary" />
+                                                <hr className='line-primary' />
                                                 <p>
                                                     From only R20 a day, Blue
                                                     Wifi offers you the best
@@ -363,15 +363,15 @@ class LandingPage extends React.Component {
                                                 </p>
                                             </div>
                                         </Col>
-                                        <Col lg="3">
-                                            <div className="info">
-                                                <div className="icon icon-warning">
-                                                    <i className="tim-icons icon-chart-pie-36" />
+                                        <Col lg='3'>
+                                            <div className='info'>
+                                                <div className='icon icon-warning'>
+                                                    <i className='tim-icons icon-chart-pie-36' />
                                                 </div>
-                                                <h4 className="info-title">
+                                                <h4 className='info-title'>
                                                     Vast Coverage
                                                 </h4>
-                                                <hr className="line-warning" />
+                                                <hr className='line-warning' />
                                                 <p>
                                                     We bring you the best
                                                     coverage and connection you
@@ -382,15 +382,15 @@ class LandingPage extends React.Component {
                                                 </p>
                                             </div>
                                         </Col>
-                                        <Col lg="3">
-                                            <div className="info">
-                                                <div className="icon icon-success">
-                                                    <i className="tim-icons icon-single-02" />
+                                        <Col lg='3'>
+                                            <div className='info'>
+                                                <div className='icon icon-success'>
+                                                    <i className='tim-icons icon-single-02' />
                                                 </div>
-                                                <h4 className="info-title">
+                                                <h4 className='info-title'>
                                                     Personal Assistance
                                                 </h4>
-                                                <hr className="line-success" />
+                                                <hr className='line-success' />
                                                 <p>
                                                     We pride ourselves in giving
                                                     the best, down to Earth
@@ -407,56 +407,56 @@ class LandingPage extends React.Component {
                             </Row>
                         </Container>
                     </section>
-                    <section className="section section-lg section-safe">
+                    <section className='section section-lg section-safe'>
                         <img
-                            alt="..."
-                            className="path"
-                            src={require("../assets/img/path5.png")}
+                            alt='...'
+                            className='path'
+                            src={require('../assets/img/path5.png')}
                         />
                         <Container>
-                            <Row className="row-grid justify-content-between">
-                                <Col md="5">
+                            <Row className='row-grid justify-content-between'>
+                                <Col md='5'>
                                     <img
-                                        alt="..."
-                                        className="img-fluid floating"
-                                        src={require("../assets/img/data.svg")}
+                                        alt='...'
+                                        className='img-fluid floating'
+                                        src={require('../assets/img/data.svg')}
                                     />
-                                    <Card className="card-stats bg-danger">
+                                    <Card className='card-stats bg-danger'>
                                         <CardBody>
-                                            <div className="justify-content-center">
-                                                <div className="numbers">
-                                                    <CardTitle tag="p">
+                                            <div className='justify-content-center'>
+                                                <div className='numbers'>
+                                                    <CardTitle tag='p'>
                                                         100%
                                                     </CardTitle>
-                                                    <p className="card-category text-white">
+                                                    <p className='card-category text-white'>
                                                         Safe
                                                     </p>
                                                 </div>
                                             </div>
                                         </CardBody>
                                     </Card>
-                                    <Card className="card-stats bg-info">
+                                    <Card className='card-stats bg-info'>
                                         <CardBody>
-                                            <div className="justify-content-center">
-                                                <div className="numbers">
-                                                    <CardTitle tag="p">
+                                            <div className='justify-content-center'>
+                                                <div className='numbers'>
+                                                    <CardTitle tag='p'>
                                                         Unlimited
                                                     </CardTitle>
-                                                    <p className="card-category text-white">
+                                                    <p className='card-category text-white'>
                                                         Data
                                                     </p>
                                                 </div>
                                             </div>
                                         </CardBody>
                                     </Card>
-                                    <Card className="card-stats bg-default">
+                                    <Card className='card-stats bg-default'>
                                         <CardBody>
-                                            <div className="justify-content-center">
-                                                <div className="numbers">
-                                                    <CardTitle tag="p">
+                                            <div className='justify-content-center'>
+                                                <div className='numbers'>
+                                                    <CardTitle tag='p'>
                                                         Fast
                                                     </CardTitle>
-                                                    <p className="card-category text-white">
+                                                    <p className='card-category text-white'>
                                                         Speeds
                                                     </p>
                                                 </div>
@@ -464,21 +464,21 @@ class LandingPage extends React.Component {
                                         </CardBody>
                                     </Card>
                                 </Col>
-                                <Col md="6">
-                                    <div className="px-md-5">
-                                        <hr className="line-success" />
+                                <Col md='6'>
+                                    <div className='px-md-5'>
+                                        <hr className='line-success' />
                                         <h3>Awesome features</h3>
                                         <p>
                                             Here are some great features you can
                                             look forward to when using our wifi
                                         </p>
-                                        <ul className="list-unstyled mt-5">
-                                            <li className="py-2">
-                                                <div className="d-flex align-items-center">
-                                                    <div className="icon icon-success mb-2">
-                                                        <i className="tim-icons icon-vector" />
+                                        <ul className='list-unstyled mt-5'>
+                                            <li className='py-2'>
+                                                <div className='d-flex align-items-center'>
+                                                    <div className='icon icon-success mb-2'>
+                                                        <i className='tim-icons icon-vector' />
                                                     </div>
-                                                    <div className="ml-3">
+                                                    <div className='ml-3'>
                                                         <h6>
                                                             Connection from
                                                             anywhere
@@ -486,24 +486,24 @@ class LandingPage extends React.Component {
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li className="py-2">
-                                                <div className="d-flex align-items-center">
-                                                    <div className="icon icon-success mb-2">
-                                                        <i className="tim-icons icon-tap-02" />
+                                            <li className='py-2'>
+                                                <div className='d-flex align-items-center'>
+                                                    <div className='icon icon-success mb-2'>
+                                                        <i className='tim-icons icon-tap-02' />
                                                     </div>
-                                                    <div className="ml-3">
+                                                    <div className='ml-3'>
                                                         <h6>
                                                             Easy to use vouchers
                                                         </h6>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li className="py-2">
-                                                <div className="d-flex align-items-center">
-                                                    <div className="icon icon-success mb-2">
-                                                        <i className="tim-icons icon-single-02" />
+                                            <li className='py-2'>
+                                                <div className='d-flex align-items-center'>
+                                                    <div className='icon icon-success mb-2'>
+                                                        <i className='tim-icons icon-single-02' />
                                                     </div>
-                                                    <div className="ml-3">
+                                                    <div className='ml-3'>
                                                         <h6>
                                                             Super friendly
                                                             support team
@@ -518,7 +518,7 @@ class LandingPage extends React.Component {
                         </Container>
                     </section>
 
-                    <section className="section section-lg section-coins">
+                    <section className='section section-lg section-coins'>
                         {/* <img
                             alt="..."
                             className="path"
@@ -526,40 +526,40 @@ class LandingPage extends React.Component {
                         /> */}
                         <Container>
                             <Row>
-                                <Col md="4">
-                                    <hr className="line-info" />
+                                <Col md='4'>
+                                    <hr className='line-info' />
                                     <h1>
-                                        Choose the voucher{" "}
-                                        <span className="text-info">
+                                        Choose the voucher{' '}
+                                        <span className='text-info'>
                                             that fits your needs
                                         </span>
                                     </h1>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="4">
-                                    <Card className="card-coin card-plain">
+                                <Col md='4'>
+                                    <Card className='card-coin card-plain'>
                                         <CardHeader>
                                             <img
-                                                alt="..."
-                                                className="img-center img-fluid"
-                                                src={require("../assets/img/bronze.png")}
+                                                alt='...'
+                                                className='img-center img-fluid'
+                                                src={require('../assets/img/bronze.png')}
                                             />
                                         </CardHeader>
                                         <CardBody>
                                             <Row>
                                                 <Col
-                                                    className="text-center"
-                                                    md="12"
+                                                    className='text-center'
+                                                    md='12'
                                                 >
-                                                    <h4 className="text-uppercase">
+                                                    <h4 className='text-uppercase'>
                                                         Day Voucher
                                                     </h4>
                                                     <hr
-                                                        className="line-primary"
+                                                        className='line-primary'
                                                         style={{
                                                             background:
-                                                                "#DD9773",
+                                                                '#DD9773'
                                                         }}
                                                     />
                                                 </Col>
@@ -578,13 +578,13 @@ class LandingPage extends React.Component {
                                                 </ListGroup>
                                             </Row>
                                         </CardBody>
-                                        <CardFooter className="text-center">
+                                        <CardFooter className='text-center'>
                                             <Button
-                                                className="btn-simple"
-                                                color="primary"
+                                                className='btn-simple'
+                                                color='primary'
                                                 style={{
-                                                    color: "#DD9773",
-                                                    borderColor: "#DD9773",
+                                                    color: '#DD9773',
+                                                    borderColor: '#DD9773'
                                                 }}
                                             >
                                                 R20
@@ -592,29 +592,29 @@ class LandingPage extends React.Component {
                                         </CardFooter>
                                     </Card>
                                 </Col>
-                                <Col md="4">
-                                    <Card className="card-coin card-plain">
+                                <Col md='4'>
+                                    <Card className='card-coin card-plain'>
                                         <CardHeader>
                                             <img
-                                                alt="..."
-                                                className="img-center img-fluid"
-                                                src={require("../assets/img/silver.png")}
+                                                alt='...'
+                                                className='img-center img-fluid'
+                                                src={require('../assets/img/silver.png')}
                                             />
                                         </CardHeader>
                                         <CardBody>
                                             <Row>
                                                 <Col
-                                                    className="text-center"
-                                                    md="12"
+                                                    className='text-center'
+                                                    md='12'
                                                 >
-                                                    <h4 className="text-uppercase">
+                                                    <h4 className='text-uppercase'>
                                                         Week Voucher
                                                     </h4>
                                                     <hr
-                                                        className="line-success"
+                                                        className='line-success'
                                                         style={{
                                                             background:
-                                                                "#E6F2F5",
+                                                                '#E6F2F5'
                                                         }}
                                                     />
                                                 </Col>
@@ -633,13 +633,13 @@ class LandingPage extends React.Component {
                                                 </ListGroup>
                                             </Row>
                                         </CardBody>
-                                        <CardFooter className="text-center">
+                                        <CardFooter className='text-center'>
                                             <Button
-                                                className="btn-simple"
-                                                color="success"
+                                                className='btn-simple'
+                                                color='success'
                                                 style={{
-                                                    color: "#E6F2F5",
-                                                    borderColor: "#E6F2F5",
+                                                    color: '#E6F2F5',
+                                                    borderColor: '#E6F2F5'
                                                 }}
                                             >
                                                 R120
@@ -647,29 +647,29 @@ class LandingPage extends React.Component {
                                         </CardFooter>
                                     </Card>
                                 </Col>
-                                <Col md="4">
-                                    <Card className="card-coin card-plain">
+                                <Col md='4'>
+                                    <Card className='card-coin card-plain'>
                                         <CardHeader>
                                             <img
-                                                alt="..."
-                                                className="img-center img-fluid"
-                                                src={require("../assets/img/gold.png")}
+                                                alt='...'
+                                                className='img-center img-fluid'
+                                                src={require('../assets/img/gold.png')}
                                             />
                                         </CardHeader>
                                         <CardBody>
                                             <Row>
                                                 <Col
-                                                    className="text-center"
-                                                    md="12"
+                                                    className='text-center'
+                                                    md='12'
                                                 >
-                                                    <h4 className="text-uppercase">
+                                                    <h4 className='text-uppercase'>
                                                         Month Voucher
                                                     </h4>
                                                     <hr
-                                                        className="line-info"
+                                                        className='line-info'
                                                         style={{
                                                             background:
-                                                                "#E7BC6A",
+                                                                '#E7BC6A'
                                                         }}
                                                     />
                                                 </Col>
@@ -688,13 +688,13 @@ class LandingPage extends React.Component {
                                                 </ListGroup>
                                             </Row>
                                         </CardBody>
-                                        <CardFooter className="text-center">
+                                        <CardFooter className='text-center'>
                                             <Button
-                                                className="btn-simple"
-                                                color="info"
+                                                className='btn-simple'
+                                                color='info'
                                                 style={{
-                                                    color: "#E7BC6A",
-                                                    borderColor: "#E7BC6A",
+                                                    color: '#E7BC6A',
+                                                    borderColor: '#E7BC6A'
                                                 }}
                                             >
                                                 R380
